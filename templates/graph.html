@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% set active_page = "graph" %}
+
+{% block title %}Graph{% endblock %}
+
+{% block content %}
+    <!--page content-->
+	
+	<script>
+		window.onload = function () {
+
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			theme: "light2", // "light1", "light2", "dark1", "dark2"
+			title:{
+				text: "Average billionaire wealth by age."
+			},
+			axisX: {
+				title: "Ages of billionaires"
+			},
+			axisY: {
+				title: "Amount in billions",   
+				includeZero: true
+				
+			},
+			data: [{        
+				type: "column",  
+				
+				
+				dataPoints: [      
+					{ y: 1.2, label: "0-25" },
+					{ y: 3.39,  label: "26-50" },
+					{ y: 3.62,  label: "51-75" },
+					{ y: 4.75,  label: "76-100" },
+					
+				]
+			}]
+		});
+		chart.render();
+
+		}
+		</script>
+	<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+	<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+{% endblock %}
