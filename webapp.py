@@ -21,10 +21,10 @@ def render_graph():
     names = get_names()
     return render_template('graph.html', names = names)
     
-@app.route("/graph2")
-def render_graph2():
-    names = get_names()
-    return render_template('graph2.html', names = names)
+# @app.route("/graph2")
+# def render_graph2():
+    # names = get_names()
+    # return render_template('graph2.html', names = names)
     
 def get_names():
     with open('billionaires.json') as billionaires_data:
