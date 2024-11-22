@@ -90,8 +90,8 @@ def render_response1():
             else: relationship = "the " + i['company']['relationship']
             age = ""
             if i['demographics']['age'] == 0: 
-                age = 'has an unknown age'
-            else: age = "is " + str(i['demographics']['age']) + " years old" 
+                age = 'has an unknown age in the year ' + str(i["year"]) + ","
+            else: age = "was " + str(i['demographics']['age']) + " years old in the year " + str(i["year"]) + ","
             
             if i['demographics']['gender'] == 'male':
                 reply4 = "He " + age + " and is " + relationship + " of the company."
